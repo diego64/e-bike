@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NativeBaseProvider, Box } from 'native-base';
+import { Home } from './src/page/Home';
+
+import { theme } from './src/styles/theme';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Estrutura Inicial do Projeto EBIKE</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider theme={theme}>
+     <Box flex="1" bg={theme.colors.primary[100]}>
+        <Home />
+     </Box>
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
